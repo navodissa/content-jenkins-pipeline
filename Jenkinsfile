@@ -9,4 +9,13 @@ pipeline {
       }
     }
   }
+  
+  post {
+    success {
+      archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
+      steps {
+      sh 'java -jar dist/*jar 4 5'
+      }
+    }
+  }
 }
