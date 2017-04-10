@@ -10,7 +10,9 @@ pipeline {
     }
     
     stage('run') {
-    sh 'java -jar dist/*.jar 4 5'
+      steps {
+        sh 'java -jar dist/*.jar 4 5'
+      }
     }
   }
 }
